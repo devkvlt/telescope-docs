@@ -4,6 +4,8 @@ A Neovim plugin to view brief [MDN](https://developer.mozilla.org/) documentatio
 
 Select a tag to open its full documentation in your browser.
 
+![Screenshot](./screenshot.gif)
+
 ## Install
 
 For example, with [packer.nvim](https://github.com/wbthomason/packer.nvim):
