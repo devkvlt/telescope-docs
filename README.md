@@ -1,6 +1,6 @@
 # Telescope HTML Tags
 
-A Neovim plugin to view brief [MDN](https://developer.mozilla.org/) documentation for HTML tags using [Telescope](nvim-telescope/telescope.nvim).
+A Neovim plugin to view brief [MDN](https://developer.mozilla.org/) documentation for HTML tags using [Telescope](https://github.com/nvim-telescope/telescope.nvim).
 
 Select a tag to open its full documentation in your browser.
 
