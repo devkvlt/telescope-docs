@@ -1,6 +1,6 @@
 # Telescope HTML Tags
 
-A [Telescope](nvim-telescope/telescope.nvim) extension to view brief [MDN](https://developer.mozilla.org/) documentation for HTML tags.
+A [Telescope](https://github.com/nvim-telescope/telescope.nvim) extension to view brief [MDN](https://developer.mozilla.org/) documentation for HTML tags.
 
 Select a tag to open its full documentation in your browser.
 
