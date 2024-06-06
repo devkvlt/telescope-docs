@@ -1,6 +1,6 @@
 # Telescope HTML Tags
 
-A Neovim plugin to view brief [MDN](https://developer.mozilla.org/) documentation for HTML tags using [Telescope](nvim-telescope/telescope.nvim).
+A [Telescope](nvim-telescope/telescope.nvim) extension to view brief [MDN](https://developer.mozilla.org/) documentation for HTML tags.
 
 Select a tag to open its full documentation in your browser.
 
@@ -20,23 +20,9 @@ use({
 ## Setup
 
 ```lua
-require('telescope-html-tags').setup()
+require('telescope').load_extension('html-tags')
 ```
 
-This sets up the plugin with the following defaults:
+## Usage
 
-```lua
-config = {
-  open_command = {
-    ['Linux'] = 'xdg-open',
-    ['OSX'] = 'open',
-    ['Windows'] = 'start',
-  },
-}
-```
-
-## Command
-
-Call with `:TelescopeFindHTMLTags`.
-
-Or: `:lua require('telescope-html-tags').find_html_tags()`.
+Call with `:Telescope html-tags`.
