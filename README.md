@@ -4,7 +4,7 @@ A [Telescope](https://github.com/nvim-telescope/telescope.nvim) extension to vie
 
 Select a tag to open its full documentation in your browser.
 
-![Screenshot](./screenshot.gif)
+![Screenshot](./screenshot.gif?v=2)
 
 ## Install
 
