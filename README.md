@@ -32,7 +32,6 @@ config = {
     ['OSX'] = 'open',
     ['Windows'] = 'start',
   },
-  preview_textwidth = 50,
 }
 ```
 

@@ -8,6 +8,7 @@ local previewers = require('telescope.previewers')
 local conf = require('telescope.config').values
 local action_state = require('telescope.actions.state')
 local actions = require('telescope.actions')
+local state = require('telescope.state')
 
 local function wrap_text(text, width)
   local wrapped = {}
@@ -40,7 +41,6 @@ local config = {
     ['OSX'] = 'open',
     ['Windows'] = 'start',
   },
-  preview_textwidth = 50,
 }
 
 local M = {}
@@ -53,7 +53,7 @@ function M.setup(user_config)
   M.find_html_tags = function()
     pickers
       .new({}, {
-        prompt_title = 'HTML Tags',
+        prompt_title = 'Find HTML Tags',
 
         finder = finders.new_table({
           results = require('tags'),
@@ -65,7 +65,10 @@ function M.setup(user_config)
               ordinal = entry.tag,
 
               preview_command = function(entry, bufnr)
-                local preview = wrap_text(entry.value.description, config.preview_textwidth) -- TODO: Figure out how to use preview width.
+                local current_buf = vim.api.nvim_get_current_buf()
+                local preview_win = state.get_status(current_buf).preview_win
+                local width = vim.api.nvim_win_get_width(preview_win) + 1
+                local preview = wrap_text(entry.value.description, width)
                 vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, preview)
               end,
             }
@@ -75,6 +78,7 @@ function M.setup(user_config)
         sorter = conf.generic_sorter({}),
 
         previewer = previewers.new_buffer_previewer({
+          title = 'Description',
           define_preview = function(self, entry, status)
             entry.preview_command(entry, self.state.bufnr)
           end,
