@@ -73,17 +73,8 @@ local function html_tags()
             return
           end
 
-          local open_command = {
-            ['Linux'] = 'xdg-open',
-            ['OSX'] = 'open',
-            ['Windows'] = 'start',
-          }
-          local open = open_command[jit.os]
-          if not open then
-            return
-          end
           local url = 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element/' .. selected.display:sub(2, -2)
-          vim.system({ open, url })
+          vim.ui.open(url)
         end)
         return true
       end,
