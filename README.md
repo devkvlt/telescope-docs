@@ -42,7 +42,7 @@ require('telescope').load_extension('godoc')
 Or with Lua:
 
 ```lua
-require('telescope').extensions.html_tags.find()
+require('telescope').extensions.html_tags.html_tags()
 ```
 
 #### `godoc`
