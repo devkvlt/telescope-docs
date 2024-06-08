@@ -33,7 +33,13 @@ end
 
 local function html_tags()
   pickers
-    .new({}, {
+    .new({
+      layout_config = {
+        horizontal = {
+          preview_width = 80,
+        },
+      },
+    }, {
       prompt_title = 'Find HTML Tags',
 
       finder = finders.new_table({
@@ -84,6 +90,6 @@ end
 
 return require('telescope').register_extension({
   exports = {
-    ['html-tags'] = html_tags,
+    html_tags = html_tags,
   },
 })
