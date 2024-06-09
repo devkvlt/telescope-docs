@@ -11,7 +11,7 @@ while IFS= read -r pkg; do
   funcs+="$(
     go doc -short "$pkg" \
       | grep func \
-      | awk '{split($2,a,"\\("); print "  '\'''"$pkg"'."a[1]"'\'',"}'
+      | awk '{split($2,a,"[(\\[]"); print "  '\'''"$pkg"'."a[1]"'\'',"}'
   )
 "
 
