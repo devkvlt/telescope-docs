@@ -35,6 +35,12 @@ require('telescope').load_extension('godoc')
 
 #### `html_tags`
 
+
+
+https://github.com/devkvlt/telescope-docs/assets/90241956/6068f311-ab07-486b-9b3c-44d034089584
+
+
+
 ```vim
 :Telescope html_tags
 ```
@@ -46,6 +52,12 @@ require('telescope').extensions.html_tags.html_tags()
 ```
 
 #### `godoc`
+
+
+
+https://github.com/devkvlt/telescope-docs/assets/90241956/6bcc8c55-077c-4a83-8fd7-249f1705c809
+
+
 
 ```vim
 :Telescope godoc funcs
