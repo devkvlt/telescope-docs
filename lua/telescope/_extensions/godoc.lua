@@ -5,21 +5,32 @@ local conf = require('telescope.config').values
 local action_state = require('telescope.actions.state')
 local actions = require('telescope.actions')
 
-local function doc(symbol)
+local function format(symbol)
   local result = vim.system({ 'go', 'doc', '-short', symbol }, { text = true }):wait()
   local out = vim.trim(result.stderr .. result.stdout)
   local lines = vim.split(out, '\n')
-  for i, line in ipairs(lines) do
-    if line == '' then
-      lines[i] = '//'
-    else
-      lines[i] = line:gsub('^    ', '// ')
-    end
+  for i = 1, #lines do
+    lines[i] = lines[i]:gsub('^    ', '// ')
   end
   return lines
 end
 
-local function funcs()
+local docs = {
+  funcs = {
+    prompt_title = 'Find Go Functions',
+    results = require('telescope._extensions.go_funcs'),
+  },
+  methods = {
+    prompt_title = 'Find Go Methods',
+    results = require('telescope._extensions.go_methods'),
+  },
+  types = {
+    prompt_title = 'Find Go Types',
+    results = require('telescope._extensions.go_types'),
+  },
+}
+
+local function find(what)
   pickers
     .new({
       layout_config = {
@@ -28,10 +39,10 @@ local function funcs()
         },
       },
     }, {
-      prompt_title = 'Find Go Functions',
+      prompt_title = docs[what].prompt_title,
 
       finder = finders.new_table({
-        results = require('telescope._extensions.go_funcs'),
+        results = docs[what].results,
 
         entry_maker = function(entry)
           return {
@@ -40,7 +51,7 @@ local function funcs()
             ordinal = entry,
 
             preview_command = function(entry, bufnr)
-              vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, doc(entry.value))
+              vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, format(entry.value))
             end,
           }
         end,
@@ -75,6 +86,14 @@ end
 
 return require('telescope').register_extension({
   exports = {
-    funcs = funcs,
+    funcs = function()
+      find('funcs')
+    end,
+    methods = function()
+      find('methods')
+    end,
+    types = function()
+      find('types')
+    end,
   },
 })

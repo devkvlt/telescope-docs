@@ -9,7 +9,7 @@ There are currently 2 extensions available:
   tags.
 
 - `godoc`: [Go documentation](https://pkg.go.dev/) (currently limited to
-  functions.)
+  functions, methods and types.)
 
 Select a tag to open its full documentation in your browser.
 
@@ -49,10 +49,14 @@ require('telescope').extensions.html_tags.html_tags()
 
 ```vim
 :Telescope godoc funcs
+:Telescope godoc methods
+:Telescope godoc types
 ```
 
 Or with Lua:
 
 ```lua
 require('telescope').extensions.godoc.funcs()
+require('telescope').extensions.godoc.methods()
+require('telescope').extensions.godoc.types()
 ```

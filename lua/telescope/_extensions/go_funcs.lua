@@ -238,7 +238,6 @@ return {
   'crypto/x509.ParseCertificateRequest',
   'crypto/x509.OIDFromInts',
   'crypto/x509.ParseRevocationList',
-
   'database/sql.Drivers',
   'database/sql.Register',
   'database/sql.Open',
@@ -271,8 +270,6 @@ return {
   'debug/pe.Open',
   'debug/plan9obj.NewFile',
   'debug/plan9obj.Open',
-
-
   'encoding/ascii85.Decode',
   'encoding/ascii85.Encode',
   'encoding/ascii85.MaxEncodedLen',
@@ -559,7 +556,6 @@ return {
   'go/version.Compare',
   'go/version.IsValid',
   'go/version.Lang',
-
   'hash/adler32.Checksum',
   'hash/adler32.New',
   'hash/crc32.Checksum',
@@ -619,7 +615,6 @@ return {
   'image/color.RGBToYCbCr',
   'image/color.YCbCrToRGB',
   'image/color.ModelFunc',
-
   'image/draw.Draw',
   'image/draw.DrawMask',
   'image/gif.Decode',
@@ -1315,7 +1310,6 @@ return {
   'runtime/pprof.Lookup',
   'runtime/pprof.NewProfile',
   'runtime/pprof.Profiles',
-
   'runtime/trace.IsEnabled',
   'runtime/trace.Log',
   'runtime/trace.Logf',
@@ -1746,7 +1740,6 @@ return {
   'time.UnixMilli',
   'time.AfterFunc',
   'time.NewTimer',
-
   'unicode.In',
   'unicode.Is',
   'unicode.IsControl',
