@@ -1,6 +1,6 @@
 #!/bin/bash
 
-out=lua/telescope/_extensions/go_methods.lua
+out=lua/telescope/_extensions/docs/go_methods.lua
 
 std=$(go list std | grep -vE '(vendor|internal)')
 

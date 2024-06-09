@@ -18,15 +18,15 @@ end
 local docs = {
   funcs = {
     prompt_title = 'Find Go Functions',
-    results = require('telescope._extensions.go_funcs'),
+    results = require('telescope._extensions.docs.go_funcs'),
   },
   methods = {
     prompt_title = 'Find Go Methods',
-    results = require('telescope._extensions.go_methods'),
+    results = require('telescope._extensions.docs.go_methods'),
   },
   types = {
     prompt_title = 'Find Go Types',
-    results = require('telescope._extensions.go_types'),
+    results = require('telescope._extensions.docs.go_types'),
   },
 }
 

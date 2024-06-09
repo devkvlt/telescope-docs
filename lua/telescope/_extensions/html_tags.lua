@@ -43,7 +43,7 @@ local function html_tags()
       prompt_title = 'Find HTML Tags',
 
       finder = finders.new_table({
-        results = require('telescope._extensions.tags'),
+        results = require('telescope._extensions.docs.html_tags'),
 
         entry_maker = function(entry)
           return {
